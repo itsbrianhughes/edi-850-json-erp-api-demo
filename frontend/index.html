@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDI 850 → ERP Integration Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔄 EDI 850 → JSON → ERP API Integration</h1>
+            <p>Upload an EDI 850 Purchase Order and watch the complete orchestrated pipeline</p>
+        </header>
+
+        <section class="upload-section">
+            <h2>📤 Upload EDI 850 File</h2>
+            <div class="file-upload-area">
+                <input type="file" id="fileInput" accept=".edi,.txt,.x12" />
+                <p class="upload-hint">Drag & drop an EDI file here, or click to browse</p>
+            </div>
+            <button id="uploadBtn" class="primary-btn">Process EDI File</button>
+            <div id="uploadStatus"></div>
+        </section>
+
+        <section class="job-info-section">
+            <div class="info-panel">
+                <h2>📊 Job Information</h2>
+                <pre id="jobInfo" class="info-output">No job running...</pre>
+            </div>
+            <div class="info-panel">
+                <div id="stepStatus" class="step-status">No steps yet...</div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="result-panel">
+                <h2>1️⃣ Parsed EDI JSON</h2>
+                <pre id="parsedJson" class="json-output">No data yet...</pre>
+            </div>
+
+            <div class="result-panel">
+                <h2>2️⃣ Transformed ERP Payload</h2>
+                <pre id="transformedJson" class="json-output">No data yet...</pre>
+            </div>
+
+            <div class="result-panel">
+                <h2>3️⃣ ERP API Response</h2>
+                <pre id="apiResponse" class="json-output">No data yet...</pre>
+            </div>
+        </section>
+
+        <footer>
+            <p>EDI 850 Integration Demo | Backend: <span id="backendStatus">Not Connected</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
