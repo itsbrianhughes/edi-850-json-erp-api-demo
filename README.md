@@ -49,7 +49,7 @@ This project showcases a modern EDI integration workflow:
 ## Project Structure
 
 ```
-PROJECT-2-850-JSON-ERP-API-Integration-Demo/
+edi-850-json-erp-api-demo
 │
 ├── backend/
 │   ├── main.py                   # FastAPI entry point
