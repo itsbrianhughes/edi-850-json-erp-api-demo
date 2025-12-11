@@ -87,7 +87,7 @@ edi-850-json-erp-api-demo
 ```bash
 # 1. Clone the repository
 git clone <your-repo-url>
-cd PROJECT-2-850-JSON-ERP-API-Integration-Demo
+cd edi-850-json-erp-api-demo
 
 # 2. Create virtual environment
 python3 -m venv venv
