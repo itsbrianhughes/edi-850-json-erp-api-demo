@@ -1,6 +1,6 @@
 # EDI 850 → JSON → ERP API Integration Demo
 
-> **Portfolio Project**: A complete EDI-to-API integration pipeline demonstrating parsing, transformation, and ERP system integration.
+> End-to-end EDI 850 → ERP API integration pipeline simulating how suppliers ingest purchase orders, transform them into ERP-ready data, and submit them into modern API-driven systems.
 
 ---
 
@@ -72,6 +72,62 @@ edi-850-json-erp-api-demo
 │
 └── logs/                        # Runtime logs
 ```
+
+---
+
+## Real-World Business Context
+
+In modern supply chain operations, many organizations are transitioning from legacy EDI-only workflows to API-driven ERP and fulfillment platforms.
+
+While EDI documents such as the X12 850 Purchase Order remain the primary method of exchanging orders with large retailers and distributors, downstream systems increasingly expect clean, structured JSON payloads delivered via REST APIs.
+
+This project simulates how EDI purchase orders are processed in real production environments before being accepted into ERP systems.
+
+---
+
+### Example Scenario
+
+A mid-market supplier receives an inbound EDI 850 Purchase Order from a retail trading partner.
+
+To fulfill the order, the supplier must:
+
+1. Parse the raw X12 document into a structured, machine-readable format  
+2. Normalize and transform EDI data into the ERP’s expected schema  
+3. Validate required fields, quantities, identifiers, and business logic  
+4. Submit the purchase order to an ERP system via a REST API  
+5. Log results, handle errors, and retry failures when necessary  
+
+This workflow is common when integrating EDI feeds with:
+- Cloud ERPs
+- Order management systems
+- Warehouse management systems
+- Custom fulfillment or inventory platforms
+
+---
+
+### What This Project Demonstrates
+
+This demo models that real-world integration pipeline by implementing:
+
+- Custom parsing of EDI 850 purchase orders into structured JSON  
+- A transformation layer that maps EDI data into an ERP-ready API payload  
+- A mock ERP REST API that validates and accepts purchase orders  
+- An orchestration layer handling end-to-end processing, retries, and logging  
+- A lightweight UI for uploading EDI files and inspecting results  
+
+The goal is to reflect how EDI documents are operationalized inside modern integration architectures — not just validated or translated, but actively transformed and consumed by downstream systems.
+
+---
+
+### Why This Matters
+
+In production environments, failures at this stage can result in:
+- Orders not entering the ERP
+- Fulfillment delays
+- Inventory mismatches
+- Manual rework and exception handling
+
+By modeling this flow end-to-end, the project demonstrates how EDI integrations are designed to be resilient, observable, and compatible with API-first systems.
 
 ---
 
