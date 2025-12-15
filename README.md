@@ -1,4 +1,4 @@
-# EDI 850 → JSON → ERP API Integration Demo
+# EDI 850 → JSON → ERP API Integration
 
 > End-to-end EDI 850 → ERP API integration pipeline simulating how suppliers ingest purchase orders, transform them into ERP-ready data, and submit them into modern API-driven systems.
 
