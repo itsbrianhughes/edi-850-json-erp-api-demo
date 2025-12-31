@@ -1,6 +1,17 @@
 # EDI 850 → JSON → ERP API Integration
 
-> End-to-end EDI 850 → ERP API integration pipeline simulating how suppliers ingest purchase orders, transform them into ERP-ready data, and submit them into modern API-driven systems.
+> Customer-facing integration demo: converts EDI 850 purchase orders into JSON and posts to a mock ERP API with logging, retries, and a simple UI—built to explain real integration workflows to technical + non-technical stakeholders.
+---
+
+## Why this exists
+
+Most “integrations” sound simple until you’re in a real deal cycle:
+- The buyer wants to know *what connects to what*
+- Ops wants to know *what breaks and how we see it*
+- IT wants to know *what the payload looks like and how errors are handled*
+
+This repo is a **walkable demo** of a common B2B workflow:
+**Inbound document → normalized JSON → mapped payload → API submission → audit trail + UI visibility**.
 
 ---
 
@@ -77,11 +88,23 @@ edi-850-json-erp-api-demo
 
 ## Real-World Business Context
 
-In modern supply chain operations, many organizations are transitioning from legacy EDI-only workflows to API-driven ERP and fulfillment platforms.
+In many mid-market suppliers and distributors, orders still arrive as EDI (X12 850), but the downstream systems (ERP, OMS, WMS) increasingly expect **API-friendly JSON**.
 
-While EDI documents such as the X12 850 Purchase Order remain the primary method of exchanging orders with large retailers and distributors, downstream systems increasingly expect clean, structured JSON payloads delivered via REST APIs.
+This project simulates what happens in production before an order ever shows up in an ERP screen:
+1) The inbound document is parsed into a consistent structure
+2) It’s mapped into the ERP’s API schema
+3) It’s submitted, logged, and tracked for success/failure
+4) Failures are visible and actionable (not buried in a server log)
 
-This project simulates how EDI purchase orders are processed in real production environments before being accepted into ERP systems.
+---
+
+## 5-minute demo
+
+1) Upload the sample 850 and show the parsed JSON output (normalize messy inputs)
+2) Show the transformation layer (mapping to the ERP schema)
+3) Submit to the mock ERP API (prove the handoff)
+4) Open the logs/DB table to show status + errors (operational visibility)
+5) Explain how you’d swap the mock ERP for a real customer endpoint (same flow)
 
 ---
 
